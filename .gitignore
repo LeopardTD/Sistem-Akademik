@@ -1,0 +1,4 @@
+# IDE dan Editor
+.vscode/
+.idea/
+*.swp
