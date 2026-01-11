@@ -48,7 +48,7 @@
                     <i class="bi bi-calendar-check text-info" style="font-size: 3rem;"></i>
                 </div>
                 <h5 class="card-title fw-bold">Tahun Akademik</h5>
-                <h2 class="display-4 text-info fw-bold">2024</h2>
+                <h2 class="display-4 text-info fw-bold">2025</h2>
                 <p class="text-muted">Periode aktif</p>
             </div>
         </div>
