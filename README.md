@@ -101,5 +101,5 @@ akademi/
 - Kelas: TRPL 2C
 
 ## 📝 Lisensi
-Project ini dibuat untuk keperluan akademik.
+Project ini dibuat untuk keperluan tugas mata kuliah pemrograman web.
 ```
