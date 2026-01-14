@@ -1,4 +1,8 @@
 <?php
+if (!isset($db) && file_exists(__DIR__ . '/koneksi.php')) {
+    require_once 'koneksi.php';
+}
+
 $nim = isset($_GET['nim']) ? sanitize($db, $_GET['nim']) : '';
 
 if (empty($nim)) {

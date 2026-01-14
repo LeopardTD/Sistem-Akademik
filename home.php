@@ -1,3 +1,10 @@
+<?php
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
+?>
+
 <div class="text-center mb-5">
     <h1 class="display-4 fw-bold mb-3">
         <i class="bi bi-mortarboard-fill text-primary"></i>

@@ -1,3 +1,9 @@
+<?php
+if (!isset($db) && file_exists(__DIR__ . '/koneksi.php')) {
+    require_once 'koneksi.php';
+}
+?>
+
 <div class="row justify-content-center">
     <div class="col-lg-10">
         <div class="mb-4">

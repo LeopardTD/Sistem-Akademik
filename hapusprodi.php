@@ -12,7 +12,6 @@ if ($id > 0) {
     if ($result['total'] > 0) {
         $_SESSION['prodi_error'] = "Tidak dapat menghapus program studi karena masih ada {$result['total']} mahasiswa yang terdaftar di program studi ini. Hapus atau pindahkan mahasiswa terlebih dahulu.";
     } else {
-        // Menggunakan prepared statement untuk keamanan
         $stmt = mysqli_prepare($db, "DELETE FROM program_studi WHERE id = ?");
         if ($stmt) {
             mysqli_stmt_bind_param($stmt, "i", $id);

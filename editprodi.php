@@ -1,4 +1,8 @@
 <?php
+if (!isset($db) && file_exists(__DIR__ . '/koneksi.php')) {
+    require_once 'koneksi.php';
+}
+
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
 if ($id <= 0) {

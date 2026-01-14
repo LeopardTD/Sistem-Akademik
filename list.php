@@ -1,3 +1,9 @@
+<?php
+if (!isset($db) && file_exists(__DIR__ . '/koneksi.php')) {
+    require_once 'koneksi.php';
+}
+?>
+
 <div class="mb-4">
     <h3 class="fw-bold">
         <i class="bi bi-people-fill text-primary me-2"></i>Daftar Mahasiswa

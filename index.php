@@ -97,15 +97,38 @@ cek_login(); // Proteksi halaman
                         </ul>
                     </li>
                 </ul>
+                
+                <!-- User Profile Dropdown -->
                 <div class="d-flex align-items-center">
-                    <span class="navbar-text me-3">
-                        <i class="bi bi-person-circle me-1"></i>
-                        <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong>
-                    </span>
-                    <a href="logout.php" class="btn btn-outline-light btn-sm" 
-                       onclick="return confirm('Yakin ingin logout?');">
-                        <i class="bi bi-box-arrow-right me-1"></i>Logout
-                    </a>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-light dropdown-toggle" type="button" 
+                                id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle me-1"></i>
+                            <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li>
+                                <h6 class="dropdown-header">
+                                    <i class="bi bi-person-badge"></i> 
+                                    <?php echo htmlspecialchars($_SESSION['nama'] ?? $_SESSION['username']); ?>
+                                </h6>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item <?php echo (isset($_GET['p']) && $_GET['p'] == 'profil') ? 'active' : ''; ?>" 
+                                   href="index.php?p=profil">
+                                    <i class="bi bi-person-fill me-2"></i>Edit Profil
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item text-danger" href="logout.php" 
+                                   onclick="return confirm('Yakin ingin logout?');">
+                                    <i class="bi bi-box-arrow-right me-2"></i>Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -142,6 +165,9 @@ cek_login(); // Proteksi halaman
                                 case 'editprodi':
                                     include 'editprodi.php';
                                     break;
+                                case 'profil':
+                                    include 'profil_content.php';
+                                    break;
                                 default:
                                     include 'home.php';
                             }
@@ -156,7 +182,7 @@ cek_login(); // Proteksi halaman
     <footer class="text-white text-center py-3">
         <div class="container">
             <p class="mb-0">
-                <i class="bi bi-c-circle me-1"></i>2024 Sistem Informasi Akademik</i>
+                <i class="bi bi-c-circle me-1"></i> 2024 Sistem Informasi Akademik
             </p>
         </div>
     </footer>

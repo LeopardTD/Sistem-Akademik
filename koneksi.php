@@ -1,14 +1,18 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 $server = "localhost";
 $user = "root";
 $password = "";
 $nama_database = "db_akademik";
 
-$db = mysqli_connect($server, $user, $password, $nama_database);
+$koneksi = mysqli_connect($server, $user, $password, $nama_database);
 
-if (!$db) {
+$db = $koneksi;
+
+if (!$koneksi) {
     die("Gagal terhubung dengan database: " . mysqli_connect_error());
 }
 

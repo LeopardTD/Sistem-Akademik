@@ -1,4 +1,8 @@
 <?php
+if (!isset($db) && file_exists(__DIR__ . '/koneksi.php')) {
+    require_once 'koneksi.php';
+}
+
 $result_prodi = mysqli_query($db, "SELECT id, nama_prodi, jenjang FROM program_studi ORDER BY nama_prodi");
 ?>
 
